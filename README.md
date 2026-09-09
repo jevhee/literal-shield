@@ -1,8 +1,8 @@
 # LiteralShield
 
-LiteralShield is an Android Gradle plugin that obfuscates selected string literals in your own Android module bytecode.
+![LiteralShield banner](docs/images/literalshield-banner.png)
 
-> **Status:** `0.1.0-SNAPSHOT` prototype. Literal obfuscation is not secret storage and does not protect values already present in application memory.
+LiteralShield is an Android Gradle plugin that obfuscates selected string literals in your own Android module bytecode.
 
 ## Requirements
 

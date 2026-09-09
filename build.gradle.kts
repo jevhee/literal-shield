@@ -28,21 +28,6 @@ tasks.register("publishToMavenLocal") {
     )
 }
 
-if (
-    providers.gradleProperty("mavenRepositoryUrl").isPresent ||
-    providers.environmentVariable("MAVEN_REPOSITORY_URL").isPresent
-) {
-    tasks.register("publishToConfiguredMaven") {
-        group = "publishing"
-        description = "Publishes the runtime and Gradle plugin to the configured Maven repository."
-        dependsOn(
-            ":literalshield-runtime:publishAllPublicationsToRemoteRepository",
-            gradle.includedBuild("literalshield-gradle-plugin")
-                .task(":publishAllPublicationsToRemoteRepository"),
-        )
-    }
-}
-
 allprojects {
     configurations.configureEach {
         resolutionStrategy.dependencySubstitution {
